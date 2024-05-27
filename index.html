@@ -4,170 +4,240 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Plantilla para apps ucol.mx</title>
+        <title>Calculadora de audición</title>
 
         <!-- CSS -->
         <link href="https://www.ucol.mx/favicon.ico" rel="shortcut icon">
-        <link rel="stylesheet" href="https://www.ucol.mx/cms/apps/assets/css/templates/1.css">
-        <link href="https://www.ucol.mx/cms/apps/assets/css/apps.min.css" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="https://www.ucol.mx/cms/apps/assets/css/templates/1.css"> -->
+        <link href="https://www.ucol.mx/cms/apps/assets/css/apps.min.css"
+            rel="stylesheet">
         <link href="main.css" rel="stylesheet">
-        <script>
-            var PAGE_TITLE = "Página de Finanzas Accesible",
-            SECTION_SUPERIOR = true,
-            CONTAINER_MODE = "container",
-            PAGE_DESCRIPTION = "Buscamos proporcionar información valiosa sobre finanzas para ayudar a todos a tomar decisiones financieras informadas y seguras.";
-
-        </script>
+        <script
+            src='https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.11.0/sweetalert2.all.js'
+            integrity='sha512-tVW2BH+E4Tz5bfMbnVTeswRrYPUPFDPsPtHRXZWhm9DZrr/5oISoe+zESrOthZrQtLtGTqV0KE90Tgl7R0Zdzw=='
+            crossorigin='anonymous'></script>
     </head>
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg bg-theme p-0" style=" 
-                    background-image: linear-gradient(80deg, #466423, #669933); 
-                    ">
-                <div class="container">
-                    <a class="navbar-brand navbar-brand-horizontal d-flex align-items-center position-relative py-3" href="./">
-                        <img class="dark-mode-item navbar-brand-item" src="https://www.ucol.mx/cms/apps/assets/img/logos/UdeC-LH-nombre-dependencia.svg" alt="Logotipo de la Universidad de Colima" height="40">
-                        <span class="float-start-title-site">Universidad de Colima</span>
-                    </a>                    
-
-                    <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse" data-bs-target="#navbar-menu"
-                        aria-controls="navbar-menu" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbar-menu">
-
-                    </div>
-
-                </div>
+        <header class="bg-dark text-white p-4 text-center">
+            <h1>Calculadora de Audición</h1>
+            <nav>
+                <ul class="navbar-nav d-flex justify-content-center flex-row">
+                    <li class="nav-item"><a class="nav-link" href="#content">Contenido</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#acercade">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#videos">Videos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                </ul>
             </nav>
         </header>
         <main class="py-4" id="content">
-            <div class="container col-12 col-md-11 px-0 d-block">
+            <div class="container col-12 col-md-11 px-0 d-block card py-5 px-4 mb-3">
+                
+                <h2>Calculadora de Audición</h2>
                 <div class="row">
-                    <header>
-                        <h1>Bienvenidos a Nuestra Página de Finanzas
-                            Accesible</h1>
-                        <nav>
-                            <ul>
-                                <li><a href="#content">Ir al Contenido</a></li>
-                                <li><a href="#contact">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </header>
+                    <div class="col-12">
+                        <p>Esta calculadora te ayudará a determinar si tienes
+                            problemas de audición. Responde las siguientes
+                            preguntas y obtén tu resultado.</p>
+                        <form id="hearingLossForm" class="mt-4 text-center">
+                            <div class="form-group">
+                                <label for="freq500">Pérdida a 500 Hz
+                                    (dB):</label>
+                                <input type="number" class="form-control"
+                                    id="freq500" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="freq1000">Pérdida a 1000 Hz
+                                    (dB):</label>
+                                <input type="number" class="form-control"
+                                    id="freq1000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="freq2000">Pérdida a 2000 Hz
+                                    (dB):</label>
+                                <input type="number" class="form-control"
+                                    id="freq2000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="freq4000">Pérdida a 4000 Hz
+                                    (dB):</label>
+                                <input type="number" class="form-control"
+                                    id="freq4000" required>
+                            </div>
+                            <button type="button" class="btn btn-primary mt-4"
+                                onclick="calculateHearingLoss()">Calcular
+                                Pérdida Auditiva Promedio</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="row card p-4">
-                    <div class="col-12" id="content">
-                        <h2>Introducción</h2>
-                        <p>En esta página, proporcionamos información valiosa
-                            sobre finanzas para ayudar a todos a tomar
-                            decisiones financieras informadas y seguras.</p>
-                        <p>Explora nuestros recursos para aprender más sobre
-                            planificación financiera, inversiones y mucho
-                            más.</p>
-
-                        <h2>Recursos Visuales</h2>
-                        <p>En el gráfico siguiente, se puede observar el
-                            crecimiento financiero anual:</p>
-                        <p>
-                            <img
-                                src="https://img.freepik.com/vector-premium/grafico-informe-anual-plantilla-presentacion-infografia-vectorial-grafico-estadistico-financiero_430696-807.jpg"
-                                alt="Un gráfico de barras que muestra el crecimiento financiero anual.">
-                        </p>
-                        <p>Además, aquí tienes una frase inspiradora:</p>
-                        <p>
-                            <img
-                                src="https://i.pinimg.com/originals/65/53/f0/6553f072f826a1337172e4a2cdc6cb08.jpg"
-                                alt="Texto en imagen: 'Nadie planea fracasar, pero muchos fracasan por no planear'">
-                        </p>
-
-                        <h2>Estadísticas de Crecimiento</h2>
-                        <table class="table table-striped">
-                            <caption>Estadísticas de Crecimiento
-                                Financiero</caption>
+            </div>
+            <!-- Información con imagen -->
+            <div class="container col-12 col-md-11 px-0 d-block card py-5 px-4 mb-3">
+                <!-- Banner -->
+                <div class="row">
+                    <div class="col-12 banner-container">
+                        <img src="https://selecciones.com.ar/wp-content/uploads/2023/05/perdida-auditiva-2.jpg" alt="" class="img-fluid mx-auto d-block">
+                    </div>
+                </div>
+                <h2>¿Qué es la pérdida auditiva?</h2>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <p>La pérdida auditiva es la disminución de la capacidad
+                            de escuchar sonidos. Puede ser causada por
+                            diferentes factores, como la exposición a ruidos
+                            fuertes, infecciones del oído, enfermedades,
+                            traumatismos, entre otros.</p>
+                        <p>La pérdida auditiva se mide en decibeles (dB) y se
+                            clasifica en diferentes grados, según la cantidad de
+                            decibeles perdidos. A continuación, se muestra una
+                            tabla con los grados de pérdida auditiva:</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <!-- Tabla accesible con las escalas, scope y headers -->
+                        <table class="table table-bordered">
+                            <caption>Tabla de grados de pérdida
+                                auditiva</caption>
                             <thead>
                                 <tr>
-                                    <th>Año</th>
-                                    <th>Porcentaje de Crecimiento</th>
+                                    <th scope="col">Grado de pérdida
+                                        auditiva</th>
+                                    <th scope="col">Decibeles (dB)</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>2021</td>
-                                    <td>3.5%</td>
+                                    <th scope="row">Normal</th>
+                                    <td>0-25 dB</td>
                                 </tr>
                                 <tr>
-                                    <td>2022</td>
-                                    <td>4.2%</td>
+                                    <th scope="row">Leve</th>
+                                    <td>26-40 dB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Moderada</th>
+                                    <td>41-55 dB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Moderadamente severa</th>
+                                    <td>56-70 dB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Severa</th>
+                                    <td>71-90 dB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Profunda</th>
+                                    <td>91-120 dB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Total</th>
+                                    <td>121 dB o más</td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <h2>Contáctanos</h2>
-                        <form>
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1"
-                                    class="form-label">Correo
-                                    Electronico</label>
-                                <input type="email" class="form-control"
-                                    id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text">Nunca
-                                    compartiremos su correo electrónico con
-                                    nadie más. </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1"
-                                    class="form-label">Contraseña</label>
-                                <input type="password" class="form-control"
-                                    id="exampleInputPassword1">
-                            </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input"
-                                    id="exampleCheck1">
-                                <label class="form-check-label"
-                                    for="exampleCheck1">Aceptar</label>
-                            </div>
-                            <button type="submit"
-                                class="btn btn-primary">Enviar</button>
-                        </form>
-
-                        <h2>Aprende Más Sobre Finanzas</h2>
-                        <p>Disfruta de este video donde explicamos estrategias
-                            clave para la planificación financiera y el
-                            ahorro:</p>
-                        <p>
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/LJHoJAE9Pfc?si=rKNtLsjIFovB_Hfc"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin"
-                                allowfullscreen></iframe>
-                        </p>
                     </div>
-                    <footer id="contact">
-                        <p>Contacto: <a
-                                href="mailto:contacto@finanzas.com">contacto@finanzas.com</a></p>
-                    </footer>
                 </div>
             </div>
+
+            <div
+                class="container col-12 col-md-11 px-0 d-block card py-5 px-4 mb-3"
+                id="acercade">
+                <h2>Acerca de</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Esta aplicación fue realizada para realizar un
+                            cálculo de la pérdida auditiva promedio de una
+                            persona. La pérdida auditiva se mide en decibeles
+                            (dB) y se calcula a partir de los valores de pérdida
+                            auditiva a 500 Hz, 1000 Hz, 2000 Hz y 4000 Hz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="container col-12 col-md-11 px-0 d-block card py-5 px-4 mb-3"
+                id="videos">
+                <h2>Videos</h2>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PZSFih7SQDk?si=7cnG05Eyyu-xeDbe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <p>Video para personas que presentan sordera o pérdida auditiva (Close Caption)</p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/LJHoJAE9Pfc?si=rKNtLsjIFovB_Hfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <p>Video adaptado para personas con pérdida auditiva o personas con ceguera (Audio Description)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="container col-12 col-md-11 px-0 d-block card py-5 px-4 mb-3"
+                id="contact">
+                <h2>Contacto</h2>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Si tienes alguna duda o comentario, por favor
+                            contáctame a través de la siguiente dirección de
+                            correo electrónico: <a
+                                href="mailto:jochoa10@ucol.mx">jochoa10@ucol.mx
+                            </a></p>
+                    </div>
+                </div>
+            </div>
+
         </main>
-        <footer class="bd-footer bg-theme-2 text-light">
+        <script>
+            function calculateHearingLoss() {
+                const freq500 = parseFloat(document.getElementById('freq500').value);
+                const freq1000 = parseFloat(document.getElementById('freq1000').value);
+                const freq2000 = parseFloat(document.getElementById('freq2000').value);
+                const freq4000 = parseFloat(document.getElementById('freq4000').value);
+    
+                if (isNaN(freq500) || isNaN(freq1000) || isNaN(freq2000) || isNaN(freq4000)) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Por favor, ingresa un valor numérico en todos los campos.',
+                    });
+                    return;
+                }
+    
+                const averageLoss = (freq500 + freq1000 + freq2000 + freq4000) / 4;
+                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Resultado',
+                    text: `Tu pérdida auditiva promedio es de ${averageLoss.toFixed(2)} dB.`,
+                });
+            }
+        </script>
+        <footer class="bg-theme-2 text-light">
             <style>
-              footer.bd-footer {
+              .bd-footer {
                 background-color: #444444 !important;
                 color: #FFFFFF !important;
               }
             </style>
-            
-            <div class="bd-footer py-3 bg-theme-2 text-light footer-bottom" role="contentinfo">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 text-center">© Derechos Reservados 2022-2025 Universidad de Colima</div>
+
+            <div class="bd-footer py-3 bg-theme-2 text-light footer-bottom"
+                role="contentinfo">
+                <div class="container">
+                    <!-- Imagen de la Universidad de Colima -->
+                    <div class="row py-3">
+                        <div class="col-12">
+                            <img
+                                src="https://portal.ucol.mx/content/micrositios/188/image/Escudo2021/1_Linea/UdeC%20Abajo_Negro_40_.png"
+                                alt="Escudo de la Universidad de Colima"
+                                class="img-fluid mx-auto d-block"
+                                style="max-width: 200px;">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">© Derechos Reservados
+                            2022-2025 Universidad de Colima</div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </footer>
+        </footer>
     </body>
 </html>
