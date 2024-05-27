@@ -1,0 +1,19 @@
+.bg-primary {
+	background-color: #007bff !important;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #006161 !important;
+	border-color: #007bff;
+}
+
+a {
+    /* Color accesible */
+    color: #006161 !important;
+    text-decoration: underline !important;
+}
+li a, p a {
+    color: #006161 !important;
+    text-decoration: underline !important;
+}
